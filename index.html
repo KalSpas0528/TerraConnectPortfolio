@@ -10,18 +10,31 @@
             margin: 40px;
             background-color: #f4f4f4;
         }
-        .timeline {
-            max-width: 800px;
+        .timeline-container {
+            max-width: 900px;
             margin: auto;
         }
-        .week {
+        .timeline-bar {
+            display: flex;
+            justify-content: space-between;
+            background: #333;
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .timeline-bar div {
+            flex: 1;
+            text-align: center;
+            font-size: 14px;
+        }
+        .section {
             background: white;
             padding: 20px;
-            margin-bottom: 20px;
+            margin-top: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .week h2 {
+        .section h2 {
             color: #333;
         }
         .tasks {
@@ -33,45 +46,76 @@
     </style>
 </head>
 <body>
-    <div class="timeline">
-        <div class="week">
+    <div class="timeline-container">
+        <div class="timeline-bar">
+            <div>Concept & Research</div>
+            <div>Scoping & Setup</div>
+            <div>Development & Integration</div>
+            <div>Testing & Refinement</div>
+            <div>Finalization & Deployment</div>
+        </div>
+        
+        <div class="section">
             <h2>Background - What is TerraConnect?</h2>
             <p>TerraConnect is an initiative designed to bridge the gap between environmental research and technology. It aims to develop AI-powered tools for data analysis, resource tracking, and sustainability efforts.</p>
         </div>
-        <div class="week">
-            <h2>Week 1 - LinkedIn, Resume, Portfolio</h2>
+
+        <div class="section">
+            <h2>Concept & Research (Weeks 1-2)</h2>
             <ul class="tasks">
-                <li>Optimize LinkedIn profile with a focus on technology and environmental projects.</li>
-                <li>Update resume with relevant skills and past experience.</li>
-                <li>Develop an online portfolio showcasing past projects and research interests.</li>
-            </ul>
-        </div>
-        <div class="week">
-            <h2>Week 2 - Research Planning Document</h2>
-            <ul class="tasks">
+                <li>Optimize LinkedIn and update resume to highlight AI and sustainability focus.</li>
+                <li>Develop online portfolio showcasing past projects and research interests.</li>
                 <li>Define the research scope for TerraConnect.</li>
-                <li>Gather existing literature and case studies.</li>
-                <li>Identify key challenges and potential AI applications.</li>
+                <li>Gather existing literature and identify AI applications.</li>
             </ul>
         </div>
-        <div class="week">
-            <h2>Week 3 - Project Scoping & Initial Setup</h2>
+        
+        <div class="section">
+            <h2>Scoping & Setup (Weeks 3-4)</h2>
             <ul class="tasks">
                 <li>Define problem statement and research background.</li>
-                <li>Research AI integration possibilities.</li>
-                <li>Outline preliminary task list.</li>
+                <li>Research AI integration possibilities and system architecture.</li>
                 <li>Set up GitHub repository and documentation structure.</li>
                 <li>Identify key stakeholders and potential collaborators.</li>
             </ul>
         </div>
-        <div class="week">
-            <h2>Week 4 - Development, Mentorship, & Portfolio Enhancement</h2>
+        
+        <div class="section">
+            <h2>Development & Integration (Weeks 5-7)</h2>
             <ul class="tasks">
                 <li>Clarify mentor expectations and guidance needs.</li>
-                <li>Organize research materials and resources.</li>
                 <li>Begin coding with regular GitHub commits.</li>
-                <li>Update portfolio with project description and clickable timeline.</li>
+                <li>Develop AI models and integrate environmental datasets.</li>
                 <li>Refine project goals based on early feedback.</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Testing & Refinement (Weeks 8-9)</h2>
+            <ul class="tasks">
+                <li>Perform iterative testing of AI models and optimize performance.</li>
+                <li>Gather user feedback and make improvements.</li>
+                <li>Update portfolio with project description and findings.</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Finalization & Deployment (Weeks 10-12)</h2>
+            <ul class="tasks">
+                <li>Finalize AI model and system architecture.</li>
+                <li>Deploy the project for real-world application.</li>
+                <li>Present findings and prepare for future iterations.</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Update Portfolio</h2>
+            <ul class="tasks">
+                <li><strong>Project Title:</strong> TerraConnect - AI for Environmental Research</li>
+                <li><strong>Problem Statement:</strong> How can AI be leveraged to improve environmental research and resource tracking?</li>
+                <li><strong>AI Approach:</strong> Using machine learning models for data analysis and pattern recognition in sustainability efforts.</li>
+                <li><strong>Research Background:</strong> Reviewing key studies, case examples, and technological advancements in AI for environmental science.</li>
+                <li>Embed images or diagrams to illustrate system architecture and data pipeline.</li>
             </ul>
         </div>
     </div>
