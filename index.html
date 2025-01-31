@@ -3,121 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TerraConnect Timeline</title>
+    <title>Portfolio Timeline & Outlook</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 40px;
+            margin: 0;
+            padding: 0;
             background-color: #f4f4f4;
         }
-        .timeline-container {
-            max-width: 900px;
-            margin: auto;
-        }
-        .timeline-bar {
-            display: flex;
-            justify-content: space-between;
-            background: #333;
+        .navbar {
+            background-color: #333;
             color: white;
-            padding: 10px;
-            border-radius: 10px;
-        }
-        .timeline-bar div {
-            flex: 1;
+            padding: 15px;
             text-align: center;
-            font-size: 14px;
+            font-size: 20px;
         }
-        .section {
+        .container {
+            width: 80%;
+            margin: 20px auto;
             background: white;
             padding: 20px;
-            margin-top: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
-        .section h2 {
+        h2 {
             color: #333;
         }
-        .tasks {
-            padding-left: 20px;
+        .timeline {
+            margin-top: 20px;
+            padding: 10px;
         }
-        .tasks li {
-            margin-bottom: 10px;
+        .timeline-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-left: 4px solid #007bff;
+            background: #f9f9f9;
+        }
+        .bold {
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <div class="timeline-container">
-        <div class="timeline-bar">
-            <div>Concept & Research</div>
-            <div>Scoping & Setup</div>
-            <div>Development & Integration</div>
-            <div>Testing & Refinement</div>
-            <div>Finalization & Deployment</div>
+    <div class="navbar">Portfolio Timeline & Outlook</div>
+    <div class="container">
+        <h2>Timeline</h2>
+        <div class="timeline">
+            <div class="timeline-item"><span class="bold">Week 1:</span> Set up LinkedIn, Resume, and Portfolio</div>
+            <div class="timeline-item"><span class="bold">Week 2:</span> Complete Research Planning Document</div>
+            <div class="timeline-item"><span class="bold">Week 3:</span> Scope Project & Initial Setup</div>
+            <div class="timeline-item"><span class="bold">Week 4:</span> Develop, Seek Mentorship & Improve Portfolio</div>
         </div>
         
-        <div class="section">
-            <h2>Background - What is TerraConnect?</h2>
-            <p>TerraConnect is an initiative designed to bridge the gap between environmental research and technology. It aims to develop AI-powered tools for data analysis, resource tracking, and sustainability efforts.</p>
-        </div>
-
-        <div class="section">
-            <h2>Concept & Research (Weeks 1-2)</h2>
-            <ul class="tasks">
-                <li>Optimize LinkedIn and update resume to highlight AI and sustainability focus.</li>
-                <li>Develop online portfolio showcasing past projects and research interests.</li>
-                <li>Define the research scope for TerraConnect.</li>
-                <li>Gather existing literature and identify AI applications.</li>
-            </ul>
-        </div>
+        <h2>Project Outlook</h2>
+        <p><span class="bold">Objective:</span> Develop an interactive Recipe Finder using filters and an intuitive UI.</p>
+        <p><span class="bold">Main Challenges:</span> Implementing API-driven searches efficiently.</p>
+        <p><span class="bold">Planned Steps:</span></p>
+        <ul>
+            <li>Design the UI and structure the database (1-2 weeks)</li>
+            <li>Integrate a Recipe API for accurate search results (1-2 weeks)</li>
+            <li>Optimize search filters and user experience (2-3 weeks)</li>
+            <li>Test, debug, and deploy the project (1 week)</li>
+        </ul>
         
-        <div class="section">
-            <h2>Scoping & Setup (Weeks 3-4)</h2>
-            <ul class="tasks">
-                <li>Define problem statement and research background.</li>
-                <li>Research AI integration possibilities and system architecture.</li>
-                <li>Set up GitHub repository and documentation structure.</li>
-                <li>Identify key stakeholders and potential collaborators.</li>
-            </ul>
-        </div>
+        <h2>GitHub Setup & Documentation</h2>
+        <p>Organizing files into structured folders, maintaining a README, and documenting progress through GitHub commits.</p>
         
-        <div class="section">
-            <h2>Development & Integration (Weeks 5-7)</h2>
-            <ul class="tasks">
-                <li>Clarify mentor expectations and guidance needs.</li>
-                <li>Begin coding with regular GitHub commits.</li>
-                <li>Develop AI models and integrate environmental datasets.</li>
-                <li>Refine project goals based on early feedback.</li>
-            </ul>
-        </div>
-        
-        <div class="section">
-            <h2>Testing & Refinement (Weeks 8-9)</h2>
-            <ul class="tasks">
-                <li>Perform iterative testing of AI models and optimize performance.</li>
-                <li>Gather user feedback and make improvements.</li>
-                <li>Update portfolio with project description and findings.</li>
-            </ul>
-        </div>
-        
-        <div class="section">
-            <h2>Finalization & Deployment (Weeks 10-12)</h2>
-            <ul class="tasks">
-                <li>Finalize AI model and system architecture.</li>
-                <li>Deploy the project for real-world application.</li>
-                <li>Present findings and prepare for future iterations.</li>
-            </ul>
-        </div>
-        
-        <div class="section">
-            <h2>Update Portfolio</h2>
-            <ul class="tasks">
-                <li><strong>Project Title:</strong> TerraConnect - AI for Environmental Research</li>
-                <li><strong>Problem Statement:</strong> How can AI be leveraged to improve environmental research and resource tracking?</li>
-                <li><strong>AI Approach:</strong> Using machine learning models for data analysis and pattern recognition in sustainability efforts.</li>
-                <li><strong>Research Background:</strong> Reviewing key studies, case examples, and technological advancements in AI for environmental science.</li>
-                <li>Embed images or diagrams to illustrate system architecture and data pipeline.</li>
-            </ul>
-        </div>
+        <h2>Next Steps</h2>
+        <p>Continue researching API integration and enhancing UI design for better usability.</p>
     </div>
 </body>
 </html>
