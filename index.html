@@ -3,74 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Timeline & Outlook</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        .navbar {
-            background-color: #333;
-            color: white;
-            padding: 15px;
-            text-align: center;
-            font-size: 20px;
-        }
-        .container {
-            width: 80%;
-            margin: 20px auto;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-            color: #333;
-        }
-        .timeline {
-            margin-top: 20px;
-            padding: 10px;
-        }
-        .timeline-item {
-            margin-bottom: 15px;
-            padding: 10px;
-            border-left: 4px solid #007bff;
-            background: #f9f9f9;
-        }
-        .bold {
-            font-weight: bold;
-        }
-    </style>
+    <title>TerraConnect</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="navbar">Portfolio Timeline & Outlook</div>
+    <div class="navbar">
+        <div class="logo">TerraConnect</div>
+        <nav>
+            <ul>
+                <li><a href="#timeline">Timeline</a></li>
+                <li><a href="#outlook">Project Outlook</a></li>
+                <li><a href="#next-steps">Next Steps</a></li>
+            </ul>
+        </nav>
+    </div>
+    
     <div class="container">
-        <h2>Timeline</h2>
+        <h2 id="timeline">Project Timeline</h2>
         <div class="timeline">
-            <div class="timeline-item"><span class="bold">Week 1:</span> Set up LinkedIn, Resume, and Portfolio</div>
-            <div class="timeline-item"><span class="bold">Week 2:</span> Complete Research Planning Document</div>
-            <div class="timeline-item"><span class="bold">Week 3:</span> Scope Project & Initial Setup</div>
-            <div class="timeline-item"><span class="bold">Week 4:</span> Develop, Seek Mentorship & Improve Portfolio</div>
+            <div class="timeline-item"><span class="bold">week 1:</span> Conceptualizing an interactive news hub using a world map.</div>
+            <div class="timeline-item"><span class="bold">week 2:</span> Researching APIs and deciding to use Leaflet.js for map creation.</div>
+            <div class="timeline-item"><span class="bold">week 3:</span> Mapping out API integration and development phases.</div>
+            <div class="timeline-item"><span class="bold">week 4:</span> Conducting further research on news API integration.</div>
         </div>
         
-        <h2>Project Outlook</h2>
-        <p><span class="bold">Objective:</span> Develop an interactive Recipe Finder using filters and an intuitive UI.</p>
-        <p><span class="bold">Main Challenges:</span> Implementing API-driven searches efficiently.</p>
+        <h2 id="outlook">Project Outlook</h2>
+        <p><span class="bold">Objective:</span> Develop an interactive news hub featuring a world map for quick access to global news.</p>
+        <p><span class="bold">Main Challenges:</span> Efficient API integration for fetching live news updates.</p>
         <p><span class="bold">Planned Steps:</span></p>
         <ul>
-            <li>Design the UI and structure the database (1-2 weeks)</li>
-            <li>Integrate a Recipe API for accurate search results (1-2 weeks)</li>
-            <li>Optimize search filters and user experience (2-3 weeks)</li>
-            <li>Test, debug, and deploy the project (1 week)</li>
+            <li>Implement Leaflet.js for interactive map functionality.</li>
+            <li>Integrate a News API for real-time updates.</li>
+            <li>Optimize map layers for a seamless user experience.</li>
+            <li>Test, debug, and deploy the project.</li>
         </ul>
         
-        <h2>GitHub Setup & Documentation</h2>
-        <p>Organizing files into structured folders, maintaining a README, and documenting progress through GitHub commits.</p>
-        
-        <h2>Next Steps</h2>
-        <p>Continue researching API integration and enhancing UI design for better usability.</p>
+        <h2 id="next-steps">Next Steps</h2>
+        <p>Further research on API integration and refining UI design for ease of use.</p>
     </div>
 </body>
 </html>
