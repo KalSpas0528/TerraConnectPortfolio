@@ -53,12 +53,6 @@ h2 {
     color: #333;
 }
 
-.timeline {
-    margin-top: 20px;
-    padding: 10px;
-    position: relative;
-}
-
 .timeline-item {
     margin-bottom: 15px;
     padding: 10px;
@@ -73,15 +67,17 @@ h2 {
     background: #e6f0ff;
 }
 
-.timeline-item::after {
-    content: '\25B6';
-    position: absolute;
-    right: 10px;
-    color: #007bff;
-    font-size: 18px;
-    transform: rotate(90deg);
+.dropdown {
+    display: none;
+    margin-top: 10px;
+    background: #f0f0f0;
+    padding: 10px;
+    border-left: 4px solid #007bff;
 }
 
+.timeline-item:hover .dropdown {
+    display: block;
+}
 .bold {
     font-weight: bold;
 }
