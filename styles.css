@@ -1,22 +1,26 @@
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    color: #333;
 }
 
+/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
+    background-color: #007bff;
     color: white;
     padding: 15px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .navbar .logo {
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .navbar nav ul {
@@ -34,72 +38,87 @@ body {
     color: white;
     text-decoration: none;
     font-size: 18px;
+    transition: color 0.3s ease-in-out;
 }
 
 .navbar nav ul li a:hover {
-    text-decoration: underline;
+    color: #ffd700;
 }
 
+/* Container */
 .container {
     width: 80%;
-    margin: 20px auto;
+    margin: 40px auto;
     background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* Headings */
 h2 {
-    color: #333;
+    color: #007bff;
+    font-weight: 600;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
 }
 
+/* Timeline */
 .timeline-item {
     margin-bottom: 15px;
-    padding: 10px;
-    border-left: 4px solid #007bff;
+    padding: 15px;
+    border-left: 5px solid #007bff;
     background: #f9f9f9;
     position: relative;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: all 0.3s ease-in-out;
+    border-radius: 5px;
 }
 
 .timeline-item:hover {
     background: #e6f0ff;
+    transform: scale(1.02);
 }
 
 .dropdown {
     display: none;
     margin-top: 10px;
-    background: #f0f0f0;
+    background: #eef5ff;
     padding: 10px;
     border-left: 4px solid #007bff;
+    border-radius: 5px;
 }
 
 .timeline-item:hover .dropdown {
     display: block;
 }
-.bold {
-    font-weight: bold;
-}
 
-#ai-assistance, #leaflet-news {
+/* AI Assistance & Outlook */
+#ai-assistance, #outlook {
     background: #eef5ff;
-    padding: 15px;
+    padding: 20px;
     border-left: 5px solid #007bff;
     margin-top: 20px;
-    border-radius: 5px;
+    border-radius: 8px;
 }
 
+/* Project Link */
 .project-link {
-    display: block;
+    display: inline-block;
     text-align: center;
     margin: 20px 0;
     font-size: 18px;
     font-weight: bold;
     color: #007bff;
     text-decoration: none;
+    padding: 8px 15px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
 }
 
 .project-link:hover {
-    text-decoration: underline;
+    background-color: #007bff;
+    color: white;
 }
