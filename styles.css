@@ -150,3 +150,48 @@ h2 {
 .collapsible.active .collapsible-content {
   display: block;
 }
+/* Week Section */
+.week-section {
+    margin-bottom: 40px;
+  }
+  
+  .week-section h2 {
+    color: #007bff;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
+  /* Snapshot Container */
+  .snapshot-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .snapshot {
+    width: 48%;  /* Adjust width to have two side-by-side snapshots */
+  }
+  
+  .snapshot h3 {
+    color: #007bff;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .snapshot img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Timeline Adjustments */
+  .timeline-item {
+    margin-bottom: 20px;  /* Increased margin to give more space */
+  }
+  
+  .timeline-item .dropdown {
+    padding-left: 20px; /* Added padding for better visual hierarchy */
+  }
+  
