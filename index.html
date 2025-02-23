@@ -3,9 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TerraConnect Portfolio - Past Work</title>
+  <title>TerraConnect Portfolio - Home</title>
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+    rel="stylesheet"
+  />
 </head>
 <body>
   <!-- Navigation Bar -->
@@ -13,151 +16,90 @@
     <div class="logo">TerraConnect</div>
     <nav>
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="past-work.html" class="nav-link btn">Past Work</a></li>
       </ul>
     </nav>
   </div>
 
   <!-- Main Content Container -->
   <div class="container">
-    <!-- Collapsible: Past Current Project Snapshot -->
+    <!-- Collapsible: Current Project Details -->
     <div class="collapsible">
-      <h2 id="snapshot" class="collapsible-header">Current Project Snapshot (Past Work) (click here)</h2>
+      <h2 id="current-project" class="collapsible-header">
+        Current Project Details (click to expand)
+      </h2>
       <div class="collapsible-content">
+        <!-- Project Title & Description -->
+        <h3>Project Title &amp; Description</h3>
         <p>
-          <strong>What Features Currently Exist?</strong><br>
-          - Interactive world map built with Leaflet.js.<br>
-          - Each country displays its Wikipedia summary when clicked.<br>
-          - Basic UI and navigation elements are in place.
+          <strong>TerraConnect: Global Interactive News Map</strong><br>
+          TerraConnect is an innovative platform that integrates an interactive world map with live news updates.
+          Designed to empower users with localized and global news at their fingertips, this project leverages modern
+          web technologies to deliver a seamless and engaging experience.
         </p>
-        <p>
-          <strong>What Still Needs to be Done?</strong><br>
-          - Implement a dynamic news-fetching feature.<br>
-          - Optimize map performance and UI responsiveness.<br>
-          - Decide on the best approach for integrating live news.
-        </p>
-        <p>
-          <strong>Known Challenges &amp; Roadblocks:</strong><br>
-          - <em>News Integration:</em> Choosing between a paid News API, web scraping, or using RSS feeds.<br>
-          &nbsp;&nbsp;&bull; <strong>News API:</strong> Offers comprehensive data but is cost-prohibitive.<br>
-          &nbsp;&nbsp;&bull; <strong>Web Scraping:</strong> Might slow down the experience when a country is clicked.<br>
-          &nbsp;&nbsp;&bull; <strong>RSS Feeds:</strong> Promising alternative for speed and reliability (pending further testing).
-        </p>
-        <p>
-          <strong>Visual Snapshot:</strong><br>
-          <img src="images/FirstScreenshot.png" alt="TerraConnect Screenshot" />
-        </p>
-      </div>
-    </div>
 
-    <!-- Week 6 Section -->
-    <div class="week-section">
-      <h2>Week 6: New Additions</h2>
-      <p>
-        In Week 6, I added the <strong>Country Guessing Game</strong> feature, where users can challenge themselves to guess a country by clicking on the map.
-        I also introduced a <strong>local storage</strong> functionality that keeps track of the countries a user has visited,
-        saving their progress even after they refresh the page or return later.
-      </p>
-      <div class="snapshot-container">
-        <!-- Current Project Snapshot -->
-        <div class="snapshot">
-          <h3>Current Project Snapshot</h3>
-          <img src="images/FirstScreenshot.png" alt="TerraConnect Snapshot" />
-        </div>
-        <!-- New Addition Snapshot -->
-        <div class="snapshot">
-          <h3>New Addition for Week 6</h3>
-          <img src="images/Week6.png" alt="Country Guessing Game and Local Storage" />
-        </div>
-      </div>
-    </div>
+        <!-- Research & Planning Documentation -->
+        <h3>Research &amp; Planning Documentation</h3>
+        <p>
+          Extensive research was conducted on mapping libraries such as Leaflet.js and on various methods for live news
+          integration—including News APIs, web scraping, and RSS feeds. Detailed planning documents and wireframes were
+          created to ensure an optimal user flow and high performance.
+        </p>
 
-    <!-- Collapsible: Project Development: Early Stages -->
-    <div class="collapsible">
-      <h2 id="project-development" class="collapsible-header">Project Development: Early Stages (click here)</h2>
-      <div class="collapsible-content">
-        <p>
-          <strong>Summary:</strong> TerraConnect has laid a solid foundation by establishing an interactive map with Leaflet.js.
-          When a country is clicked, its Wikipedia summary appears, offering quick background information.
-          The next major milestone is integrating live news feeds.
-        </p>
-        <p>
-          <strong>News Integration Challenge:</strong> Deciding on the most efficient method to fetch live news:
-        </p>
+        <!-- Current Progress with Screenshots & Code Snippets -->
+        <h3>Current Progress with Screenshots &amp; Code Snippets</h3>
+        <!-- Nested collapsible for progress details -->
+        <div class="collapsible">
+          <h4 class="collapsible-header">
+            View Progress Details (click to expand)
+          </h4>
+          <div class="collapsible-content">
+            <p>
+              <img src="images/CurrentProgressScreenshot.png" alt="Current Progress Screenshot" />
+            </p>
+            <pre>
+// Sample code snippet for fetching news data
+async function fetchNews(country) {
+  try {
+    const response = await fetch(`api/news?country=${country}`);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching news:", error);
+  }
+}
+            </pre>
+          </div>
+        </div>
+
+        <!-- Timeline & Milestones -->
+        <h3>Timeline &amp; Milestones</h3>
         <ul>
-          <li><strong>News API:</strong> Comprehensive data but comes at a cost.</li>
-          <li><strong>Web Scraping:</strong> May introduce delays during user interaction.</li>
-          <li><strong>RSS Feeds:</strong> Promising alternative for speed and reliability (pending further testing).</li>
+          <li><strong>Week 1:</strong> Ideation and initial design sketches.</li>
+          <li><strong>Week 2:</strong> Research on mapping libraries and news integration options.</li>
+          <li><strong>Week 3:</strong> Development of the interactive map and Wikipedia integration.</li>
+          <li><strong>Week 4:</strong> Testing various methods for live news fetching.</li>
+          <li><strong>Week 5:</strong> Implementation of map markers and refinement of UI elements.</li>
+          <li><strong>Week 6:</strong> Addition of the Country Guessing Game and local storage functionality.</li>
         </ul>
+
+        <!-- Project Video Walkthrough Placeholder -->
+        <h3>Project Video Walkthrough</h3>
+        <div class="video-placeholder">
+          <p>Your video walkthrough will appear here once uploaded.</p>
+        </div>
       </div>
     </div>
-
-    <!-- GitHub Commits & Progress -->
-    <h3>GitHub Commits &amp; Progress</h3>
-    <ul>
-      <li>Check out the progress of commits on <a href="https://github.com/kalspas0528/TerraConnect/commit/abc123" target="_blank">GitHub</a>.</li>
-    </ul>
-
-    <!-- Challenges & Learnings -->
-    <h3>Challenges &amp; Learnings</h3>
-    <ul>
-      <li>Integrating multiple data sources while ensuring smooth performance.</li>
-      <li>Managing asynchronous data loading and error handling.</li>
-      <li>Choosing the best method for fetching live news data.</li>
-      <li>Maintaining responsiveness and interactivity on the map.</li>
-    </ul>
-
-    <!-- Current Functionality Demo -->
-    <h3>Current Functionality Demo</h3>
-    <p>
-      Explore the interactive map on the homepage to see the current functionality, including country-specific Wikipedia popups.
-    </p>
-
-    <!-- Next Steps Section -->
-    <h3 id="next-steps">Next Steps</h3>
-    <p>
-      Upcoming development plans include:
-    </p>
-    <ul>
-      <li>Refining the UI for enhanced responsiveness and accessibility.</li>
-      <li>Integrating the news component using the best method determined from testing (RSS, web scraping, or a News API).</li>
-      <li>Further optimizing the interactive map for performance.</li>
-    </ul>
-
-    <!-- Project Outlook Section -->
-    <h2 id="outlook">Project Outlook</h2>
-    <p>
-      <strong>Objective:</strong> Build an interactive world map that provides access to global news.
-    </p>
-    <p>
-      <strong>Main Challenges:</strong> Efficiently integrating live news feeds without sacrificing performance.
-    </p>
-    <p>
-      <strong>Technologies:</strong> Leaflet.js for mapping; potential news integration via RSS feeds, web scraping, or a paid News API.
-    </p>
-    <ul>
-      <li>Enhance map interactivity with advanced Leaflet.js features.</li>
-      <li>Test and integrate the most efficient news fetching method.</li>
-      <li>Optimize UI and performance for a seamless user experience.</li>
-    </ul>
-
-    <!-- AI Assistance Section -->
-    <h2 id="ai-assistance">AI Assistance</h2>
-    <p>
-      AI is being used to:
-    </p>
-    <ul>
-      <li>Optimize map rendering and performance.</li>
-      <li>Filter and categorize news data by region.</li>
-      <li>Enhance data visualization and overall user experience.</li>
-    </ul>
-
-    <!-- GitHub Repository Section -->
-    <h2 id="github">GitHub Repository</h2>
-    <p>
-      For the complete codebase and updates, visit the project on
-      <a href="https://kalspas0528.github.io/TerraConnect/" target="_blank" class="project-link">GitHub</a>.
-    </p>
   </div>
+
+  <!-- JavaScript for Collapsible Sections -->
+  <script>
+    document.querySelectorAll('.collapsible-header').forEach(header => {
+      header.addEventListener('click', () => {
+        header.parentElement.classList.toggle('active');
+      });
+    });
+  </script>
 </body>
 </html>
