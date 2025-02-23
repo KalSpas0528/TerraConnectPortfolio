@@ -96,7 +96,7 @@ section {
   overflow-x: auto;
 }
 
-/* Collapsible Sections (if needed) */
+/* Collapsible Sections */
 .collapsible {
   margin-bottom: 20px;
 }
@@ -121,6 +121,15 @@ section {
 
 .collapsible.active .collapsible-content {
   display: block;
+}
+
+/* Video Placeholder */
+.video-placeholder {
+  background-color: #eef5ff;
+  padding: 20px;
+  border: 2px dashed #007bff;
+  text-align: center;
+  border-radius: 5px;
 }
 
 /* Links */
