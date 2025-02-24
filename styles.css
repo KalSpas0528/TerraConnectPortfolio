@@ -119,6 +119,11 @@ img {
   margin: 10px 0;
 }
 
+.small-photo {
+  max-width: 400px;
+  margin: 10px 0;
+}
+
 /* Snapshot container */
 .snapshot-container {
   display: flex;
