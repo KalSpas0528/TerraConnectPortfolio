@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TerraConnect Portfolio – Past Work</title>
+  <title>TerraConnect Portfolio – Home</title>
   <link rel="stylesheet" href="styles.css" />
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
@@ -12,108 +12,164 @@
   <link rel="icon" type="image/png" href="images/favicon.png" />
 </head>
 <body>
-  <header class="navbar">
+  <!-- Navigation Bar -->
+  <div class="navbar">
     <div class="logo">TerraConnect</div>
     <nav>
       <ul>
         <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="past-work.html" class="nav-link btn">Past Work</a></li>
       </ul>
     </nav>
-  </header>
+  </div>
 
-  <main class="container">
-    <section class="collapsible">
-      <button class="collapsible-header" aria-expanded="false">
-        Past Work Details
-      </button>
+  <!-- Main Content Container -->
+  <div class="container">
+    <div class="collapsible">
+      <h2 id="current-project" class="collapsible-header">
+        Current Project Details (click to expand)
+      </h2>
       <div class="collapsible-content">
-        <h3>Completed Features</h3>
+
+        <!-- Project Title & Description -->
+        <h3>Project Title &amp; Description</h3>
+        <p>
+          <strong>TerraConnect: Global Interactive News Map</strong><br />
+          An educational platform combining an interactive Leaflet.js world map,
+          on‑click Wikipedia summaries, a Country Guessing Game, side‑by‑side
+          comparisons, and (in progress) live news via RSS feeds.
+        </p>
+
+        <!-- Research & Planning Documentation -->
+        <h3>Research &amp; Planning Documentation</h3>
+        <p>
+          To ensure performance, accessibility, and maintainability, I evaluated multiple
+          approaches before settling on the current stack:
+        </p>
         <ul>
-          <li>Interactive world map built with Leaflet.js.</li>
-          <li>Wikipedia summary popups for each country.</li>
-          <li>Country Guessing Game &amp; visited‑country tracking.</li>
-          <li>Side‑by‑side country comparison tool.</li>
+          <li>
+            <strong>Mapping Library:</strong> Chose Leaflet.js for its lightweight bundle,
+            extensive plugin ecosystem, and zero‑cost licensing. Compared with Mapbox GL
+            (better styling but pay‑per‑use) and Google Maps (heavy SDK, usage quotas).
+          </li>
+          <li>
+            <strong>News Integration:</strong>
+            <ul>
+              <li><em>News APIs</em> – Comprehensive articles but cost‑prohibitive for free tiers.</li>
+              <li><em>Web Scraping</em> – Flexible but risks rate‑limits and latency spikes.</li>
+              <li><em>RSS Feeds</em> – Lightweight XML feeds from major outlets; chosen for
+              prototype speed and reliability.</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Wireframing & UX Flow:</strong> Created detailed wireframes in Figma,
+            mapping out user journeys: country click → Wikipedia popup → optional news pane.
+          </li>
+          <li>
+            <strong>Performance Planning:</strong> Decided on debounced search and minimal
+            DOM updates to keep map fluid, even on slower connections.
+          </li>
         </ul>
 
-        <h3>Challenges &amp; Roadblocks</h3>
+        <!-- Timeline & Milestones -->
+        <h3>Timeline &amp; Milestones</h3>
         <ul>
-          <li>Choosing the optimal news integration method (API vs. RSS vs. scraping).</li>
-          <li>Managing performance when fetching external data on click.</li>
-          <li>Ensuring responsive, accessible UI across devices.</li>
+          <li><strong>Week 1:</strong> Project proposal, Figma wireframes, tech stack decision.</li>
+          <li><strong>Week 2:</strong> Leaflet.js prototype & basic map styling.</li>
+          <li><strong>Week 3:</strong> Wikipedia API integration & popup modal implementation.</li>
+          <li><strong>Week 4:</strong> Initial responsive design & mobile layout testing.</li>
+          <li><strong>Week 5:</strong> Map markers customization & UI refinements.</li>
+          <li><strong>Week 6:</strong> Country Guessing Game logic & localStorage tracking.</li>
+          <li><strong>Week 7:</strong> Side‑by‑side comparison tool via Rest Countries API.</li>
+          <li><strong>Week 8:</strong> Debounced search bar & advanced filtering.</li>
+          <li><strong>Week 9:</strong> RSS‑based news prototype & UI integration tests.</li>
+          <li><strong>Week 10:</strong> Comprehensive bug sweeps & error‑state handling.</li>
+          <li><strong>Week 11:</strong> Accessibility audit & ARIA label enhancements.</li>
+          <li><strong>Week 12:</strong> Cross‑browser video support & performance tuning.</li>
+          <li><strong>Week 13:</strong> User testing feedback & stretch‑feature tweaks.</li>
+          <li><strong>Week 14:</strong> Feature lock, news‑bug fixes, portfolio polish, Shark Tank pitch prep.</li>
         </ul>
 
-        <h3>Week 6 Additions</h3>
-        <div class="snapshot-container">
-          <div class="snapshot">
-            <h4>Leaflet Map &amp; Wikipedia Popups</h4>
-            <img src="images/FirstScreenshot.png" alt="Wiki popup on map" />
-          </div>
-          <div class="snapshot">
-            <h4>Country Guessing Game</h4>
-            <img src="images/Week6.png" alt="Guessing game interface" />
-          </div>
+        <!-- MVP Overview -->
+        <h3>MVP Overview</h3>
+        <p>
+          Core deliverables achieved:
+          <ul>
+            <li>Interactive world map (Leaflet.js)</li>
+            <li>On‑click Wikipedia summaries</li>
+            <li>Country Guessing Game with progress saved</li>
+            <li>Side‑by‑side country comparison tool</li>
+          </ul>
+        </p>
+
+        <!-- Current Progress & Screenshots -->
+        <h3>Current Progress &amp; Screenshots</h3>
+
+        <h4>Country Wikipedia Popup</h4>
+        <img src="images/FirstScreenshot.png"
+             alt="Map showing a popup with country information from Wikipedia" />
+
+        <h4>Compare Countries Tool</h4>
+        <img src="images/SecondScreenshot.png"
+             alt="Side-by-side country data comparison interface" />
+
+        <p>
+          The live news panel is now prototyped using RSS feeds—articles appear in a
+          sidebar when a country is clicked. Remaining issues:
+          intermittent loading delays and homepage “stick” bug when navigating back.
+        </p>
+
+        <!-- Video Walkthroughs -->
+        <h3>Video Walkthroughs</h3>
+        <div class="video-placeholder">
+          <h4>Early Development Walkthrough</h4>
+          <video controls width="100%">
+            <source src="images/FirstVideo.webm" type="video/webm" />
+            <p>Your browser doesn’t support HTML5 video. <a href="images/FirstVideo.webm">Download</a>.</p>
+          </video>
+        </div>
+        <div class="video-placeholder">
+          <h4>MVP Walkthrough</h4>
+          <video controls width="100%">
+            <source src="images/MVPVideo.webm" type="video/webm" />
+            <p>Your browser doesn’t support HTML5 video. <a href="images/MVPVideo.webm">Download</a>.</p>
+          </video>
+        </div>
+        <div class="video-placeholder">
+          <h4>Development Process</h4>
+          <video controls width="100%">
+            <source src="images/DevVideo.webm" type="video/webm" />
+            <p>Your browser doesn’t support HTML5 video. <a href="images/DevVideo.webm">Download</a>.</p>
+          </video>
         </div>
 
-        <h3>Early Development Summary</h3>
-        <p>
-          Initial focus was on setting up Leaflet, wiring Wikipedia API calls,
-          and creating a basic layout. The main goal was to prove the concept
-          before layering on additional features.
-        </p>
+        <!-- What I Learned -->
+        <h3>What I Learned</h3>
+        <ul>
+          <li>Balancing map performance with rich interactivity using Leaflet.js plugins.</li>
+          <li>Designing accessible modals and controls with ARIA best practices.</li>
+          <li>Managing asynchronous data flows across multiple APIs (Wikipedia, RestCountries, RSS feeds).</li>
+          <li>Iterative UX improvements driven by wireframe-to-prototype feedback loops.</li>
+        </ul>
 
-        <h3>GitHub Commits &amp; Progress</h3>
-        <p>
-          Review detailed commit history on
-          <a href="https://github.com/kalspas0528/TerraConnect/commits" target="_blank">
-            GitHub
-          </a>.
-        </p>
-
-        <h3>Current Functionality Demo</h3>
-        <p>
-          Visit the homepage to interact with the map, test popups, and try
-          the Compare Countries tool.
-        </p>
-
+        <!-- Next Steps -->
         <h3>Next Steps</h3>
         <ul>
-          <li>Select and integrate the final news‑fetching approach.</li>
-          <li>Optimize map performance for large data sets.</li>
-          <li>Enhance UI responsiveness and accessibility.</li>
-          <li>Document architecture and publish on GitHub Pages.</li>
+          <li>Fix RSS feed loading bugs and homepage navigation “stick” issue.</li>
+          <li>Polish UI/UX: hover states, micro‑animations, consistent spacing.</li>
+          <li>Finalize documentation and deploy on GitHub Pages.</li>
+          <li>Prepare Shark Tank–style pitch focusing on educational impact and scalability.</li>
         </ul>
 
-        <h3>AI Assistance Opportunities</h3>
-        <ul>
-          <li>Optimize rendering performance with smart caching.</li>
-          <li>Filter and categorize news by region automatically.</li>
-          <li>Generate data‑driven insights and visualizations.</li>
-        </ul>
-
-        <h3>Project Outlook</h3>
-        <p>
-          TerraConnect aims to be the go‑to educational portal for geography
-          and current events. With the news feature locked and UI polished,
-          it’s primed for real‑world use and demonstration.
-        </p>
-
-        <h3>GitHub Repository</h3>
-        <p>
-          Full code &amp; deployment updates at
-          <a href="https://kalspas0528.github.io/TerraConnect/" target="_blank">
-            GitHub Pages
-          </a>.
-        </p>
       </div>
-    </section>
-  </main>
+    </div>
+  </div>
 
+  <!-- JavaScript for Collapsible Sections -->
   <script>
-    document.querySelectorAll('.collapsible-header').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const expanded = btn.getAttribute('aria-expanded') === 'true';
-        btn.setAttribute('aria-expanded', String(!expanded));
-        btn.parentElement.classList.toggle('active');
+    document.querySelectorAll('.collapsible-header').forEach(header => {
+      header.addEventListener('click', () => {
+        header.parentElement.classList.toggle('active');
       });
     });
   </script>
