@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -94,12 +95,24 @@
         <h3>MVP Overview</h3>
         <p>
           Core deliverables achieved:
-          <ul>
-            <li>Interactive world map (Leaflet.js)</li>
-            <li>On‑click Wikipedia summaries</li>
-            <li>Country Guessing Game with progress saved</li>
-            <li>Side‑by‑side country comparison tool</li>
-          </ul>
+        </p>
+        <ul>
+          <li>Interactive world map (Leaflet.js)</li>
+          <li>On‑click Wikipedia summaries</li>
+          <li>Country Guessing Game with progress saved</li>
+          <li>Side‑by‑side country comparison tool</li>
+        </ul>
+
+        <!-- Final Product Description -->
+        <h3>Final Product Description</h3>
+        <p>
+          The final feature added was a live news sidebar powered by RSS feeds. When a country is clicked on the map, the sidebar fetches and displays up-to-date headlines relevant to that country, seamlessly integrating geography exploration with real-time global news.
+        </p>
+
+        <!-- Target Audience Explanation -->
+        <h3>Target Audience Explanation</h3>
+        <p>
+          TerraConnect is designed for students and lifelong learners curious about geography, international politics, and global affairs. It solves the problem of fragmented learning resources—combining maps, Wikipedia summaries, and current news into a single interactive platform. Ideal for both classroom educators and independent learners seeking an engaging, unified way to explore the world.
         </p>
 
         <!-- Current Progress & Screenshots -->
@@ -168,9 +181,7 @@
   <!-- JavaScript for Collapsible Sections -->
   <script>
     document.querySelectorAll('.collapsible-header').forEach(header => {
-      header.addEventListener('click', () => {
-        header.parentElement.classList.toggle('active');
-      });
+      header.parentElement.classList.toggle('active');
     });
   </script>
 </body>
