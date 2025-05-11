@@ -1,168 +1,376 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TerraConnect Portfolio - Past Work</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
-    rel="stylesheet"
-  />
-</head>
-<body>
-  <!-- Navigation Bar -->
-  <div class="navbar">
-    <div class="logo">TerraConnect</div>
-    <nav>
-      <ul>
-        <li><a href="index.html" class="nav-link">Home</a></li>
-      </ul>
-    </nav>
-  </div>
+// === news.js - Handles news fetching and display ===
 
-  <!-- Main Content Container -->
-  <div class="container">
-    <!-- Collapsible: Past Work Details -->
-    <div class="collapsible">
-      <h2 class="collapsible-header">
-        Past Work Details (click to expand)
-      </h2>
-      <div class="collapsible-content">
-        <!-- Collapsible: Current Project Snapshot (Past Work) -->
-        <div class="collapsible">
-          <h3 class="collapsible-header">
-            Current Project Snapshot (Past Work)
-          </h3>
-          <div class="collapsible-content">
-            <p>
-              <strong>What Features Currently Exist?</strong><br>
-              - Interactive world map built with Leaflet.js.<br>
-              - Each country displays its Wikipedia summary when clicked.<br>
-              - Basic UI and navigation elements are in place.
-            </p>
-            <p>
-              <strong>What Still Needs to be Done?</strong><br>
-              - Implement a dynamic news-fetching feature.<br>
-              - Optimize map performance and UI responsiveness.<br>
-              - Decide on the best approach for integrating live news.
-            </p>
-            <p>
-              <strong>Known Challenges &amp; Roadblocks:</strong><br>
-              - <em>News Integration:</em> Choosing between a paid News API, web scraping, or using RSS feeds.<br>
-              &nbsp;&nbsp;&bull; <strong>News API:</strong> Offers comprehensive data but is cost-prohibitive.<br>
-              &nbsp;&nbsp;&bull; <strong>Web Scraping:</strong> Might slow down the experience when a country is clicked.<br>
-              &nbsp;&nbsp;&bull; <strong>RSS Feeds:</strong> Promising alternative for speed and reliability (pending further testing).
-            </p>
-            <p>
-              <strong>Visual Snapshot:</strong><br>
-              <img src="images/FirstScreenshot.png" alt="TerraConnect Screenshot" />
-            </p>
-          </div>
+document.addEventListener("DOMContentLoaded", initNewsFeature)
+
+function initNewsFeature() {
+  // Using Gnews API with your API key
+  const GNEWS_API_KEY = "f722aee7a01c3aadf85deec3f2069229"
+  const newsContent = document.getElementById("newsContent")
+  const newsToggle = document.getElementById("newsToggle")
+  const newsSection = document.querySelector(".news-section")
+
+  // Country-specific news database for fallback
+  const countryNewsDatabase = {}
+
+  // Country name corrections for API
+  const countryNameCorrections = {
+    "Guinea Bissau": "Guinea-Bissau",
+    "Democratic Republic of the Congo": "Democratic Republic of Congo",
+    "Republic of the Congo": "Republic of Congo",
+    "United States": "United States of America",
+    "Côte d'Ivoire": "Ivory Coast",
+    "Timor-Leste": "East Timor",
+    Czechia: "Czech Republic",
+    "North Macedonia": "Macedonia",
+    Eswatini: "Swaziland",
+  }
+
+  if (!newsContent) {
+    console.error("#newsContent element not found.")
+    return
+  }
+
+  // Toggle news panel
+  if (newsToggle) {
+    newsToggle.addEventListener("click", () => {
+      newsSection.classList.toggle("expanded")
+      newsToggle.innerHTML = newsSection.classList.contains("expanded")
+        ? '<i class="fas fa-chevron-right"></i>'
+        : '<i class="fas fa-chevron-left"></i>'
+    })
+  }
+
+  // Initialize the country news database with some predefined news
+  async function initCountryNewsDatabase() {
+    try {
+      // Fetch all countries to build our database
+      const response = await fetch("https://restcountries.com/v3.1/all")
+      const countries = await response.json()
+
+      // Create mock news for each country
+      countries.forEach((country) => {
+        const countryName = country.name.common
+        const countryCode = country.cca2
+        const capital = country.capital ? country.capital[0] : "the capital"
+        const region = country.region
+        const subregion = country.subregion || region
+        const flag = country.flags.png
+
+        // Generate 5 mock news articles specific to this country
+        countryNewsDatabase[countryName] = {
+          flag: flag,
+          articles: [
+            {
+              title: `Economic Development in ${countryName}`,
+              description: `Recent economic initiatives in ${countryName} have shown promising results, with growth reported across multiple sectors.`,
+              url: `https://en.wikipedia.org/wiki/${encodeURIComponent(countryName)}`,
+              image: `https://source.unsplash.com/featured/?${encodeURIComponent(countryName)},city`,
+              publishedAt: new Date(Date.now() - 86400000).toISOString(), // Yesterday
+              source: { name: "TerraConnect Economics" },
+            },
+            {
+              title: `Cultural Festival Celebrates ${countryName}'s Heritage`,
+              description: `A major cultural festival in ${capital} showcases the rich traditions and heritage of ${countryName}.`,
+              url: `https://en.wikipedia.org/wiki/Culture_of_${encodeURIComponent(countryName)}`,
+              image: `https://source.unsplash.com/featured/?${encodeURIComponent(countryName)},culture`,
+              publishedAt: new Date(Date.now() - 172800000).toISOString(), // 2 days ago
+              source: { name: "Global Culture Review" },
+            },
+            {
+              title: `Tourism in ${countryName} Sees Significant Growth`,
+              description: `${countryName}'s tourism sector has reported a substantial increase in visitors, highlighting the country's appeal as a travel destination.`,
+              url: `https://en.wikipedia.org/wiki/Tourism_in_${encodeURIComponent(countryName)}`,
+              image: `https://source.unsplash.com/featured/?${encodeURIComponent(countryName)},landscape`,
+              publishedAt: new Date(Date.now() - 259200000).toISOString(), // 3 days ago
+              source: { name: "Travel Insights" },
+            },
+            {
+              title: `${countryName} Strengthens International Relations`,
+              description: `Diplomatic efforts by ${countryName} have led to improved relations with neighboring countries in ${subregion}.`,
+              url: `https://en.wikipedia.org/wiki/Foreign_relations_of_${encodeURIComponent(countryName)}`,
+              image: `https://source.unsplash.com/featured/?${encodeURIComponent(countryName)},flag`,
+              publishedAt: new Date(Date.now() - 345600000).toISOString(), // 4 days ago
+              source: { name: "International Affairs" },
+            },
+            {
+              title: `Environmental Initiatives in ${countryName}`,
+              description: `New environmental protection measures in ${countryName} aim to preserve the country's natural resources and biodiversity.`,
+              url: `https://en.wikipedia.org/wiki/Geography_of_${encodeURIComponent(countryName)}`,
+              image: `https://source.unsplash.com/featured/?${encodeURIComponent(countryName)},nature`,
+              publishedAt: new Date(Date.now() - 432000000).toISOString(), // 5 days ago
+              source: { name: "Environmental Watch" },
+            },
+          ],
+        }
+      })
+
+      console.log("Country news database initialized with mock data")
+    } catch (error) {
+      console.error("Error initializing country news database:", error)
+    }
+  }
+
+  // Initialize the database when the page loads
+  initCountryNewsDatabase()
+
+  async function fetchCountryNews(country) {
+    try {
+      console.log(`Fetching news for ${country}`)
+
+      // Check if we need to correct the country name for the API
+      const correctedCountryName = countryNameCorrections[country] || country
+
+      // First, get the country code using the REST Countries API
+      const countryResponse = await fetch(
+        `https://restcountries.com/v3.1/name/${encodeURIComponent(correctedCountryName)}?fullText=true`,
+      )
+
+      if (!countryResponse.ok) {
+        throw new Error(`Country API error: ${countryResponse.status}`)
+      }
+
+      const countryData = await countryResponse.json()
+      const countryCode = countryData[0]?.cca2?.toLowerCase()
+      const countryFlag = countryData[0]?.flags?.png
+
+      // Try to get country-specific news using the country name in the query
+      const apiUrl = `https://gnews.io/api/v4/search?q=${encodeURIComponent(country)}&lang=en&max=10&apikey=${GNEWS_API_KEY}`
+
+      const response = await fetch(apiUrl)
+
+      if (!response.ok) {
+        throw new Error(`News API error: ${response.status}`)
+      }
+
+      const data = await response.json()
+      console.log("News data received:", data)
+
+      // Filter articles to ensure they're actually about this country
+      let filteredArticles = data.articles || []
+
+      // If we have articles, try to filter them to be more country-specific
+      if (filteredArticles.length > 0) {
+        // Try to filter articles that mention the country name in title or description
+        const countrySpecificArticles = filteredArticles.filter(
+          (article) =>
+            article.title.includes(country) || (article.description && article.description.includes(country)),
+        )
+
+        // If we have country-specific articles, use those, otherwise use all articles
+        if (countrySpecificArticles.length >= 3) {
+          filteredArticles = countrySpecificArticles
+        }
+      }
+
+      return {
+        articles: filteredArticles,
+        fromCountry: true,
+        flag: countryFlag,
+      }
+    } catch (error) {
+      console.error("News fetch failed:", error)
+
+      // Try alternative approach - search for news about the country
+      try {
+        console.log("Trying alternative news approach...")
+        const apiUrl = `https://gnews.io/api/v4/search?q=${encodeURIComponent(country)}&lang=en&max=5&apikey=${GNEWS_API_KEY}`
+        const response = await fetch(apiUrl)
+
+        if (!response.ok) throw new Error("Alternative approach failed")
+
+        const data = await response.json()
+
+        // Get country flag
+        let countryFlag = null
+        try {
+          // Check if we need to correct the country name for the API
+          const correctedCountryName = countryNameCorrections[country] || country
+
+          const countryResponse = await fetch(
+            `https://restcountries.com/v3.1/name/${encodeURIComponent(correctedCountryName)}?fullText=true`,
+          )
+          const countryData = await countryResponse.json()
+          countryFlag = countryData[0]?.flags?.png
+        } catch (e) {
+          console.error("Could not fetch country flag:", e)
+        }
+
+        return {
+          articles: data.articles || [],
+          fromCountry: false,
+          flag: countryFlag,
+        }
+      } catch (altError) {
+        console.error("Alternative news approach failed:", altError)
+
+        // Use our pre-generated country-specific news database as fallback
+        if (countryNewsDatabase[country]) {
+          console.log("Using pre-generated country news for", country)
+          return {
+            articles: countryNewsDatabase[country].articles,
+            fromCountry: true,
+            flag: countryNewsDatabase[country].flag,
+            isMock: true,
+          }
+        }
+
+        // If all else fails, generate some mock data on the fly
+        console.log("Generating mock news for", country)
+
+        // Try to get country flag
+        let countryFlag = null
+        try {
+          // Check if we need to correct the country name for the API
+          const correctedCountryName = countryNameCorrections[country] || country
+
+          const countryResponse = await fetch(
+            `https://restcountries.com/v3.1/name/${encodeURIComponent(correctedCountryName)}?fullText=true`,
+          )
+          const countryData = await countryResponse.json()
+          countryFlag = countryData[0]?.flags?.png
+        } catch (e) {
+          console.error("Could not fetch country flag:", e)
+        }
+
+        return {
+          articles: [
+            {
+              title: `Latest developments in ${country}`,
+              description: `Stay updated with the most recent events and news from ${country}.`,
+              url: `https://en.wikipedia.org/wiki/${encodeURIComponent(country)}`,
+              image: `https://source.unsplash.com/featured/?${encodeURIComponent(country)}`,
+              publishedAt: new Date().toISOString(),
+              source: { name: "TerraConnect News" },
+            },
+            {
+              title: `${country}'s economic outlook`,
+              description: `Analysis of current economic trends and future prospects for ${country}.`,
+              url: `https://en.wikipedia.org/wiki/Economy_of_${encodeURIComponent(country)}`,
+              image: `https://source.unsplash.com/featured/?${encodeURIComponent(country)},city`,
+              publishedAt: new Date(Date.now() - 86400000).toISOString(),
+              source: { name: "TerraConnect Economics" },
+            },
+            {
+              title: `Cultural highlights from ${country}`,
+              description: `Explore the rich cultural heritage and traditions of ${country}.`,
+              url: `https://en.wikipedia.org/wiki/Culture_of_${encodeURIComponent(country)}`,
+              image: `https://source.unsplash.com/featured/?${encodeURIComponent(country)},culture`,
+              publishedAt: new Date(Date.now() - 172800000).toISOString(),
+              source: { name: "Global Culture Review" },
+            },
+          ],
+          fromCountry: true,
+          flag: countryFlag,
+          isMock: true,
+        }
+      }
+    }
+  }
+
+  document.addEventListener("countrySelected", async (e) => {
+    const countryName = e.detail.country
+    if (!countryName) return
+
+    // Check if Junior Explorer mode is enabled
+    if (window.isJuniorExplorerEnabled && window.isJuniorExplorerEnabled()) {
+      // In Junior Explorer mode, show a child-friendly message instead of news
+      newsContent.innerHTML = `
+      <div class="junior-explorer-message">
+        <img src="https://source.unsplash.com/featured/?kids,learning" alt="Junior Explorer mode" class="junior-explorer-image">
+        <h3>News is not available in Junior Explorer Mode</h3>
+        <p>Ask a grown-up to turn off Junior Explorer Mode if you want to see news about ${countryName}.</p>
+        <p>Instead, try the Learn button to discover fun facts about countries!</p>
+        <button id="openLearnBtn" class="primary-button">
+          <i class="fas fa-graduation-cap"></i> Learn About Countries
+        </button>
+      </div>
+    `
+
+      // Add event listener to the learn button
+      document.getElementById("openLearnBtn").addEventListener("click", () => {
+        // Close news panel
+        newsSection.classList.remove("expanded")
+        newsToggle.innerHTML = '<i class="fas fa-chevron-left"></i>'
+
+        // Open learn modal
+        const learnBtn = document.getElementById("learnModeBtn")
+        if (learnBtn) {
+          learnBtn.click()
+        }
+      })
+
+      return
+    }
+
+    // Expand the news panel
+    newsSection.classList.add("expanded")
+    newsToggle.innerHTML = '<i class="fas fa-chevron-right"></i>'
+
+    // Show loading state
+    newsContent.innerHTML = `
+      <div class="loading-news">
+        <div class="spinner" style="width: 30px; height: 30px; border-width: 3px;"></div>
+        <p>Loading news for ${countryName}...</p>
+      </div>
+    `
+
+    const result = await fetchCountryNews(countryName)
+
+    if (!result) {
+      newsContent.innerHTML = `
+        <div class="news-error">
+          <i class="fas fa-exclamation-circle"></i>
+          <p>Error loading news. Please try again later.</p>
         </div>
-
-        <!-- Collapsible: Week 6 New Additions -->
-        <div class="collapsible">
-          <h3 class="collapsible-header">
-            Week 6: New Additions
-          </h3>
-          <div class="collapsible-content">
-            <p>
-              In Week 6, I added the <strong>Country Guessing Game</strong> feature, where users can challenge themselves
-              to guess a country by clicking on the map. I also introduced a <strong>local storage</strong> functionality
-              that keeps track of the countries a user has visited.
-            </p>
-            <div class="snapshot-container">
-              <div class="snapshot">
-                <h4>Current Project Snapshot</h4>
-                <img src="images/FirstScreenshot.png" alt="TerraConnect Snapshot" />
-              </div>
-              <div class="snapshot">
-                <h4>New Addition for Week 6</h4>
-                <img src="images/Week6.png" alt="Country Guessing Game and Local Storage" />
+      `
+    } else if (result.articles.length === 0) {
+      newsContent.innerHTML = `
+        <div class="news-error">
+          <i class="fas fa-info-circle"></i>
+          <p>No recent news found for <strong>${countryName}</strong>.</p>
+        </div>
+      `
+    } else {
+      const newsHTML = result.articles
+        .map(
+          (article) => `
+            <div class="news-article">
+              ${article.image ? `<img src="${article.image}" alt="${article.title}" class="news-image">` : ""}
+              <h3><a href="${article.url}" target="_blank">${article.title}</a></h3>
+              <p>${article.description ? article.description : "No description available."}</p>
+              <div class="meta">
+                <span>${article.source?.name || "Unknown"}</span>
+                <span>${new Date(article.publishedAt).toLocaleDateString()}</span>
               </div>
             </div>
-          </div>
+          `,
+        )
+        .join("")
+
+      const headerText = result.isMock
+        ? `Information about ${countryName}`
+        : `${result.fromCountry ? "Latest News from" : "News about"} ${countryName}`
+
+      newsContent.innerHTML = `
+        <div class="country-news-header">
+          ${result.flag ? `<img src="${result.flag}" alt="${countryName} flag">` : ""}
+          <h2>${headerText}</h2>
+          <button id="closeNewsBtn" class="close-news-btn" title="Close News">
+            <i class="fas fa-times"></i>
+          </button>
         </div>
+        ${result.isMock ? '<p class="mock-notice">Using curated information for this country. Live news may not be available.</p>' : ""}
+        ${newsHTML}
+      `
 
-        <!-- Collapsible: Project Development: Early Stages -->
-        <div class="collapsible">
-          <h3 class="collapsible-header">
-            Project Development: Early Stages
-          </h3>
-          <div class="collapsible-content">
-            <p>
-              <strong>Summary:</strong> TerraConnect has laid a solid foundation by establishing an interactive map with
-              Leaflet.js. When a country is clicked, its Wikipedia summary appears, offering quick background information.
-              The next major milestone is integrating live news feeds.
-            </p>
-            <p>
-              <strong>News Integration Challenge:</strong> Deciding on the most efficient method to fetch live news:
-            </p>
-            <ul>
-              <li><strong>News API:</strong> Comprehensive data but comes at a cost.</li>
-              <li><strong>Web Scraping:</strong> May introduce delays during user interaction.</li>
-              <li><strong>RSS Feeds:</strong> Promising alternative for speed and reliability (pending further testing).</li>
-            </ul>
-          </div>
-        </div>
+      // Add event listener to the close news button
+      document.getElementById("closeNewsBtn").addEventListener("click", () => {
+        newsSection.classList.remove("expanded")
+        newsToggle.innerHTML = '<i class="fas fa-chevron-left"></i>'
+      })
+    }
+  })
+}
 
-        <!-- Additional Past Work Sections -->
-        <h3>GitHub Commits &amp; Progress</h3>
-        <ul>
-          <li>Check out the progress of commits on <a href="https://github.com/kalspas0528/TerraConnect/commit/abc123" target="_blank">GitHub</a>.</li>
-        </ul>
-        <h3>Challenges &amp; Learnings</h3>
-        <ul>
-          <li>Integrating multiple data sources while ensuring smooth performance.</li>
-          <li>Managing asynchronous data loading and error handling.</li>
-          <li>Choosing the best method for fetching live news data.</li>
-          <li>Maintaining responsiveness and interactivity on the map.</li>
-        </ul>
-        <h3>Current Functionality Demo</h3>
-        <p>
-          Explore the interactive map on the homepage to see the current functionality, including country-specific Wikipedia popups.
-        </p>
-        <h3>Next Steps</h3>
-        <ul>
-          <li>Refining the UI for enhanced responsiveness and accessibility.</li>
-          <li>Integrating the news component using the best method determined from testing.</li>
-          <li>Further optimizing the interactive map for performance.</li>
-        </ul>
-        <h3>Project Outlook</h3>
-        <p>
-          <strong>Objective:</strong> Build an interactive world map that provides access to global news.<br>
-          <strong>Main Challenges:</strong> Efficiently integrating live news feeds without sacrificing performance.<br>
-          <strong>Technologies:</strong> Leaflet.js for mapping; potential news integration via RSS feeds, web scraping, or a paid News API.
-        </p>
-        <ul>
-          <li>Enhance map interactivity with advanced Leaflet.js features.</li>
-          <li>Test and integrate the most efficient news fetching method.</li>
-          <li>Optimize UI and performance for a seamless user experience.</li>
-        </ul>
-        <h3>AI Assistance</h3>
-        <ul>
-          <li>Optimize map rendering and performance.</li>
-          <li>Filter and categorize news data by region.</li>
-          <li>Enhance data visualization and overall user experience.</li>
-        </ul>
-        <h3>GitHub Repository</h3>
-        <p>
-          For the complete codebase and updates, visit the project on
-          <a href="https://kalspas0528.github.io/TerraConnect/" target="_blank" class="project-link">GitHub</a>.
-        </p>
-      </div>
-    </div>
-  </div>
 
-  <!-- JavaScript for Collapsible Sections -->
-  <script>
-    document.querySelectorAll('.collapsible-header').forEach(header => {
-      header.addEventListener('click', () => {
-        header.parentElement.classList.toggle('active');
-      });
-    });
-  </script>
-</body>
-</html>
 
