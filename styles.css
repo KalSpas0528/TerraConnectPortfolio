@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f4f4f4;
@@ -16,20 +16,38 @@ body {
   padding: 15px 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-.navbar .logo { font-size: 24px; font-weight: 600; color: white; }
-.navbar nav ul { list-style: none; display: flex; margin: 0; padding: 0; }
-.navbar nav ul li { margin: 0 10px; }
+.navbar .logo {
+  font-size: 24px;
+  font-weight: 600;
+  color: white;
+}
+.navbar nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+.navbar nav ul li {
+  margin: 0 10px;
+}
 .navbar nav ul li a {
-  color: white; text-decoration: none; font-size: 18px;
-  padding: 8px 12px; border-radius: 4px;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 8px 12px;
+  border-radius: 4px;
   transition: background-color 0.3s ease;
 }
-.navbar nav ul li a:hover { background-color: #0056b3; }
+.navbar nav ul li a:hover {
+  background-color: #0056b3;
+}
 .navbar nav ul li a.btn {
-  background-color: #ffd700; color: #007bff;
+  background-color: #ffd700;
+  color: #007bff;
 }
 .navbar nav ul li a.btn:hover {
-  background-color: #e6c200; color: #0056b3;
+  background-color: #e6c200;
+  color: #0056b3;
 }
 
 /* Container */
@@ -50,19 +68,36 @@ h2 {
   padding-bottom: 5px;
   margin-bottom: 20px;
 }
-h3, h4 { color: #007bff; margin-top: 20px; }
+h3,
+h4 {
+  color: #007bff;
+  margin-top: 20px;
+}
 
 /* Collapsible */
-.collapsible { margin-bottom: 20px; border: 1px solid #007bff; border-radius: 5px; overflow: hidden; }
+.collapsible {
+  margin-bottom: 20px;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  overflow: hidden;
+}
 .collapsible-header {
-  background-color: #007bff; color: white; padding: 10px 15px;
-  cursor: pointer; user-select: none; font-size: 18px;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 18px;
 }
 .collapsible-content {
-  display: none; padding: 10px 15px; background-color: #f9f9f9;
+  display: none;
+  padding: 10px 15px;
+  background-color: #f9f9f9;
   transition: max-height 0.3s ease-out;
 }
-.collapsible.active .collapsible-content { display: block; }
+.collapsible.active .collapsible-content {
+  display: block;
+}
 
 /* Lists inside deeper sections */
 .collapsible-content ul ul {
@@ -91,6 +126,14 @@ img {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .container { width: 90%; }
-  .navbar nav ul { flex-direction: column; gap: 10px; }
+  .container {
+    width: 90%;
+  }
+  .navbar nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
+
+
+
