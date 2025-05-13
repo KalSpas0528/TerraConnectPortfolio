@@ -96,6 +96,32 @@ ul.timeline li strong {
   margin-top: 16px;
 }
 
+/* Feature Cards */
+.feature-showcase {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 32px;
+}
+.feature-card {
+  background: #f1f3f4;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+.feature-card:hover {
+  transform: translateY(-4px);
+}
+.feature-card h4 {
+  color: #1a73e8;
+  margin-bottom: 10px;
+}
+.feature-card p {
+  font-size: 0.95rem;
+  color: #444;
+}
+
 /* Footer */
 footer {
   text-align: center;
@@ -128,5 +154,9 @@ footer {
   .container {
     margin: 24px auto;
     padding: 24px;
+  }
+
+  .feature-showcase {
+    grid-template-columns: 1fr;
   }
 }
