@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TerraConnect Portfolio - Past Work</title>
+  <title>TerraConnect - Interactive World Map</title>
   <link rel="stylesheet" href="styles.css" />
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
@@ -23,164 +23,105 @@
 
   <!-- Main Content Container -->
   <div class="container">
-    <!-- Collapsible: Past Work Details -->
-    <div class="collapsible">
-      <h2 class="collapsible-header">
-        Past Work Details (click to expand)
-      </h2>
-      <div class="collapsible-content">
-        <!-- Collapsible: Current Project Snapshot (Past Work) -->
-        <div class="collapsible">
-          <h3 class="collapsible-header">
-            Current Project Snapshot (Past Work)
-          </h3>
-          <div class="collapsible-content">
-            <p>
-              <strong>What Features Currently Exist?</strong><br>
-              - Interactive world map built with Leaflet.js.<br>
-              - Each country displays its Wikipedia summary when clicked.<br>
-              - Live news integration with GNews API.<br>
-              - Country comparison tool for side-by-side analysis.<br>
-              - Country guessing game with progress tracking.<br>
-              - Junior Explorer mode for child-friendly educational experience.<br>
-              - Dark/light theme toggle for user preference.
-            </p>
-            <p>
-              <strong>What Still Needs to be Done?</strong><br>
-              - Enhance the Junior Explorer mode with more educational content.<br>
-              - Implement user accounts for cross-device synchronization.<br>
-              - Add more detailed country statistics and visualizations.
-            </p>
-            <p>
-              <strong>Known Challenges &amp; Roadblocks:</strong><br>
-              - <em>News Integration:</em> Successfully implemented using GNews API with robust error handling and fallback mechanisms.<br>
-              - <em>Junior Explorer Mode:</em> Required careful restructuring of the application's architecture for conditional rendering.<br>
-              - <em>Performance Optimization:</em> Balanced rich interactivity with smooth performance across devices.
-            </p>
-            <p>
-              <strong>Visual Snapshot:</strong><br>
-              <img src="images/FirstScreenshot.png" alt="TerraConnect Screenshot" />
-            </p>
-          </div>
-        </div>
+    <!-- Project Overview -->
+    <section class="overview">
+      <h2>TerraConnect: Global Interactive News Map</h2>
+      <p>
+        TerraConnect is an interactive platform that combines dynamic live features with a global map. Users can explore countries, access live news, view country comparisons, and enjoy engaging educational tools. Powered by Leaflet.js, GNews API, and a user-friendly interface, TerraConnect offers an innovative way to learn about the world.
+      </p>
+      <h3>Key Features</h3>
+      <ul>
+        <li><strong>Interactive World Map:</strong> Click on any country to access live Wikipedia summaries and news updates.</li>
+        <li><strong>Country Comparison:</strong> Compare countries side by side in terms of population, area, and more.</li>
+        <li><strong>Live News Feeds:</strong> Integrated with the GNews API for real-time news updates.</li>
+        <li><strong>Country Guessing Game:</strong> A fun and educational game where users guess countries based on the map.</li>
+        <li><strong>Junior Explorer Mode:</strong> A child-friendly mode that focuses on educational content with restricted news access.</li>
+        <li><strong>Dark/Light Mode Toggle:</strong> Users can switch between dark and light modes for better accessibility.</li>
+      </ul>
+    </section>
 
-        <!-- Collapsible: Week 6 New Additions -->
-        <div class="collapsible">
-          <h3 class="collapsible-header">
-            Week 6: New Additions
-          </h3>
-          <div class="collapsible-content">
-            <p>
-              In Week 6, I added the <strong>Country Guessing Game</strong> feature, where users can challenge themselves
-              to guess a country by clicking on the map. I also introduced a <strong>local storage</strong> functionality
-              that keeps track of the countries a user has visited.
-            </p>
-            <div class="snapshot-container">
-              <div class="snapshot">
-                <h4>Current Project Snapshot</h4>
-                <img src="images/FirstScreenshot.png" alt="TerraConnect Snapshot" />
-              </div>
-              <div class="snapshot">
-                <h4>New Addition for Week 6</h4>
-                <img src="images/Week6.png" alt="Country Guessing Game and Local Storage" />
-              </div>
-            </div>
-          </div>
-        </div>
+    <!-- Project Timeline -->
+    <section class="timeline">
+      <h2>Project Timeline</h2>
 
-        <!-- Collapsible: Week 16 Final Additions -->
-        <div class="collapsible">
-          <h3 class="collapsible-header">
-            Week 16: Final Additions
-          </h3>
-          <div class="collapsible-content">
-            <p>
-              In Week 16, I completed the project with the addition of the <strong>Junior Explorer Mode</strong>, which provides a safe, educational experience for younger users by restricting news content and focusing on learning about countries through fun facts and interactive exploration.
-            </p>
-            <p>
-              I also enhanced the learning features with more interactive elements and fixed various bugs to ensure a smooth user experience. The news feature is now fully functional with robust error handling and fallback mechanisms.
-            </p>
-            <p>
-              The project is now deployment-ready, bug-free, and professionally documented, meeting all the requirements for the final submission.
-            </p>
-          </div>
-        </div>
-
-        <!-- Collapsible: Project Development: Early Stages -->
-        <div class="collapsible">
-          <h3 class="collapsible-header">
-            Project Development: Early Stages
-          </h3>
-          <div class="collapsible-content">
-            <p>
-              <strong>Summary:</strong> TerraConnect has laid a solid foundation by establishing an interactive map with
-              Leaflet.js. When a country is clicked, its Wikipedia summary appears, offering quick background information.
-              The next major milestone is integrating live news feeds.
-            </p>
-            <p>
-              <strong>News Integration Challenge:</strong> Deciding on the most efficient method to fetch live news:
-            </p>
-            <ul>
-              <li><strong>News API:</strong> Comprehensive data but comes at a cost.</li>
-              <li><strong>Web Scraping:</strong> May introduce delays during user interaction.</li>
-              <li><strong>RSS Feeds:</strong> Promising alternative for speed and reliability (pending further testing).</li>
-              <li><strong>GNews API:</strong> Finally implemented with robust error handling and fallback mechanisms.</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Additional Past Work Sections -->
-        <h3>GitHub Commits &amp; Progress</h3>
-        <ul>
-          <li>Check out the progress of commits on <a href="https://github.com/kalspas0528/TerraConnect/commit/abc123" target="_blank">GitHub</a>.</li>
-        </ul>
-        <h3>Challenges &amp; Learnings</h3>
-        <ul>
-          <li>Integrating multiple data sources while ensuring smooth performance.</li>
-          <li>Managing asynchronous data loading and error handling.</li>
-          <li>Implementing robust error handling for API integrations.</li>
-          <li>Creating conditional UI rendering based on user preferences.</li>
-          <li>Developing educational features that are engaging for users of all ages.</li>
-          <li>Maintaining responsiveness and interactivity on the map.</li>
-        </ul>
-        <h3>Current Functionality Demo</h3>
+      <!-- Early Stages -->
+      <div class="timeline-item">
+        <h3>Week 1 - Initial Setup</h3>
         <p>
-          Explore the interactive map on the homepage to see the current functionality, including country-specific Wikipedia popups, live news integration, and the Junior Explorer mode.
+          TerraConnect started with the implementation of an interactive map using Leaflet.js, enabling users to click on any country and view its Wikipedia summary. The foundational work focused on mapping and setting up the API structure for future features.
         </p>
-        <h3>Next Steps</h3>
-        <ul>
-          <li>Enhance the Junior Explorer mode with more educational content and interactive quizzes.</li>
-          <li>Implement user accounts to save preferences and visited countries across devices.</li>
-          <li>Add more detailed country statistics and data visualizations.</li>
-          <li>Develop a mobile app version for on-the-go learning.</li>
-        </ul>
-        <h3>Project Outlook</h3>
-        <p>
-          <strong>Objective:</strong> Build an interactive world map that provides access to global news and educational content.<br>
-          <strong>Main Challenges:</strong> Efficiently integrating live news feeds and creating a safe, educational experience for users of all ages.<br>
-          <strong>Technologies:</strong> Leaflet.js for mapping; GNews API for news integration; REST Countries API for country data; Wikipedia API for summaries.
-        </p>
-        <ul>
-          <li>Enhance educational features with more interactive elements.</li>
-          <li>Implement user accounts for cross-device synchronization.</li>
-          <li>Add more detailed country statistics and visualizations.</li>
-          <li>Develop a mobile app version for on-the-go learning.</li>
-        </ul>
-        <h3>AI Assistance</h3>
-        <ul>
-          <li>Optimize map rendering and performance.</li>
-          <li>Filter and categorize news data by region.</li>
-          <li>Enhance data visualization and overall user experience.</li>
-          <li>Implement conditional rendering for Junior Explorer mode.</li>
-        </ul>
-        <h3>GitHub Repository</h3>
-        <p>
-          For the complete codebase and updates, visit the project on
-          <a href="https://kalspas0528.github.io/TerraConnect/" target="_blank" class="project-link">GitHub</a>.
-        </p>
+        <img src="images/FirstScreenshot.png" alt="TerraConnect Initial Setup" />
       </div>
-    </div>
+
+      <!-- Week 6 Additions -->
+      <div class="timeline-item">
+        <h3>Week 6 - Country Guessing Game & Local Storage</h3>
+        <p>
+          The Country Guessing Game feature was added, allowing users to challenge themselves by guessing countries based on the map. I also integrated local storage to track user progress, such as countries visited in the game.
+        </p>
+        <img src="images/Week6.png" alt="Country Guessing Game and Local Storage" />
+      </div>
+
+      <!-- Week 16 Final Additions -->
+      <div class="timeline-item">
+        <h3>Week 16 - Junior Explorer Mode & Final Touches</h3>
+        <p>
+          The Junior Explorer Mode was introduced, providing an educational experience for children with a focus on learning through fun facts and interactive exploration. The project was polished with bug fixes, and the news feature was fully optimized for better performance.
+        </p>
+        <img src="images/FinalScreenshot.png" alt="Junior Explorer Mode" />
+      </div>
+
+      <!-- Current Functionality Video -->
+      <div class="timeline-item">
+        <h3>Final Project Demo</h3>
+        <p>
+          Here's a short video demonstration of the final version of TerraConnect, showcasing the interactive map, news integration, and educational features.
+        </p>
+        <div class="video-placeholder">
+          <video controls>
+            <source src="images/FinalVideo.webm" type="video/webm" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <!-- Challenges and Roadblocks -->
+    <section class="challenges">
+      <h2>Challenges & Solutions</h2>
+      <p>Throughout the development process, several challenges were overcome:</p>
+      <ul>
+        <li><strong>News Integration:</strong> Initially, I tested different methods for integrating live news, including APIs, web scraping, and RSS feeds. Ultimately, I chose the GNews API for its reliability and ease of integration.</li>
+        <li><strong>Performance Optimization:</strong> Ensuring that the map was responsive and that the app performed well on both desktop and mobile required balancing rich interactivity with smooth user experience.</li>
+        <li><strong>Junior Explorer Mode:</strong> Developing a safe and engaging experience for younger users required careful planning and restructuring of the application architecture.</li>
+      </ul>
+    </section>
+
+    <!-- GitHub Repository -->
+    <section class="github">
+      <h2>GitHub Repository</h2>
+      <p>
+        For the complete codebase and project updates, visit the repository on GitHub:
+        <a href="https://github.com/kalspas0528/TerraConnect" target="_blank">TerraConnect on GitHub</a>.
+      </p>
+    </section>
+    
+    <!-- Next Steps -->
+    <section class="next-steps">
+      <h2>Next Steps</h2>
+      <ul>
+        <li>Enhance the Junior Explorer Mode with more educational content and interactive quizzes.</li>
+        <li>Implement user accounts to save preferences and visited countries across devices.</li>
+        <li>Add more detailed country statistics and data visualizations.</li>
+        <li>Develop a mobile app version for on-the-go learning.</li>
+      </ul>
+    </section>
   </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 TerraConnect. All rights reserved.</p>
+  </footer>
 
   <!-- JavaScript for Collapsible Sections -->
   <script>
@@ -192,6 +133,3 @@
   </script>
 </body>
 </html>
-
-
-
