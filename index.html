@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TerraConnect - Interactive World Map</title>
+  <title>TerraConnect - Project Portfolio</title>
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
 </head>
@@ -21,110 +21,120 @@
     <section class="overview">
       <h2>TerraConnect: Global Interactive News Map</h2>
       <p>
-        TerraConnect is a fully client-side web platform that empowers users to explore the world through an interactive map. Features range from educational tools to live content feeds—designed for everyone from geography enthusiasts to curious kids.
+        TerraConnect is a web application that blends interactive geography exploration with real-time data using Leaflet.js, REST Countries API, Wikipedia, and GNews. It features accessible UI/UX design, gamified learning tools, and educational modes to make global exploration exciting and informative for all ages.
       </p>
+      <div class="launch-link">
+        🌍 View the live site: <a href="https://kalspas0528.github.io/TerraConnect/" target="_blank">https://kalspas0528.github.io/TerraConnect/</a>
+      </div>
     </section>
 
     <section class="features">
-      <h2>📌 Feature Walkthrough</h2>
+      <h2>Key Features</h2>
 
       <div class="feature-block">
         <h3>🌍 Interactive World Map</h3>
-        <p>Click any country on the Leaflet-powered map to view live Wikipedia summaries. These popups act as gateways to deeper interaction: learning sessions, comparisons, and real-time news.</p>
-        <img src="images/FirstScreenshot.png" alt="Map with Wikipedia popup" class="feature-img" />
+        <p>
+          Built using Leaflet.js, the map allows users to click any country to view instant Wikipedia summaries, live GNews articles, and even play games. Map boundaries are sourced via GeoJSON and visually enhanced for accessibility and responsiveness.
+        </p>
+        <img src="images/FirstScreenshot.png" alt="Map Screenshot" class="feature-img">
       </div>
 
       <div class="feature-block">
-        <h3>📰 GNews-Powered Live News Feeds</h3>
-        <p>By integrating the GNews API, users can access the latest headlines for any selected country. This turns TerraConnect into not just an explorer—but a live news companion for international events.</p>
-        <img src="images/Week6.png" alt="News Feature" class="feature-img" />
+        <h3>🧭 Country Comparison Tool</h3>
+        <p>
+          Compare any two countries side-by-side using REST Countries API data. Users can view statistics including population, area, capital, currency, and languages in a clean visual layout.
+        </p>
+        <img src="images/CompareCountries.png" alt="Comparison Tool" class="feature-img">
+      </div>
+
+      <div class="feature-block">
+        <h3>📰 Live News Feeds</h3>
+        <p>
+          Each selected country shows current headlines via the GNews API, tailored by country name. News appears in a right-side panel with error fallback and visual loading states.
+        </p>
       </div>
 
       <div class="feature-block">
         <h3>🎮 Country Guessing Game</h3>
-        <p>A game mode challenges users to guess countries on the map. Visual feedback and answer validation help users sharpen their geographic memory. Your session history is saved using localStorage.</p>
-        <img src="images/Week6.png" alt="Guessing Game" class="feature-img" />
+        <p>
+          Highlighted country on the map—can you guess its name? With localStorage tracking and color-coded feedback, this mode makes learning geography interactive and addictive.
+        </p>
+        <img src="images/CountryGuessingGame.png" alt="Guessing Game" class="feature-img">
       </div>
 
       <div class="feature-block">
-        <h3>👦 Junior Explorer Mode</h3>
-        <p>Perfect for kids, this simplified version of the map offers educational facts, hides complex features like news feeds, and includes engaging visuals. The goal is to spark curiosity and foster geographic learning early.</p>
-        <img src="images/FinalScreenshot.png" alt="Junior Explorer Mode" class="feature-img" />
+        <h3>🧒 Junior Explorer Mode</h3>
+        <p>
+          Designed for younger users, this mode offers a simplified UI, removes the news feed, and enables kid-friendly map popups with learning buttons. Great for elementary classroom settings.
+        </p>
       </div>
 
       <div class="feature-block">
-        <h3>📘 Learn Feature</h3>
-        <p>Every country has a dedicated learn modal that includes a mini-map, language breakdown, population, and other fascinating facts. Perfect for students and educators alike.</p>
-        <img src="images/FinalScreenshot.png" alt="Learn Mode Interface" class="feature-img" />
+        <h3>📚 Learn Feature</h3>
+        <p>
+          Explore each country's culture, region, flag, capital, population, and language in a draggable popup modal with animations. Includes a built-in mini-map showing where the country is located.
+        </p>
+        <img src="images/Learn.png" alt="Learn Feature" class="feature-img">
       </div>
 
       <div class="feature-block">
-        <h3>🌓 Dark Mode</h3>
-        <p>Toggle between light and dark themes to reduce eye strain. The application uses CSS variables to apply a full theme swap without affecting usability or performance.</p>
-        <img src="images/FinalScreenshot.png" alt="Dark Mode UI" class="feature-img" />
+        <h3>🌙 Dark Mode Toggle</h3>
+        <p>
+          Full dark theme with custom CSS variables. Automatically adjusts contrast, borders, and hover states for better accessibility and screen fatigue reduction.
+        </p>
       </div>
 
       <div class="feature-block">
-        <h3>✅ Visited Countries Tracker</h3>
-        <p>Clicking on countries adds them to your visited list. The list is persistent via localStorage, and can be cleared with a single click—giving users a sense of progress and revisit history.</p>
+        <h3>📌 Visited Country Tracker</h3>
+        <p>
+          Your clicked countries are saved using localStorage and shown in the left sidebar. Includes a clear-all button and responsive styling.
+        </p>
       </div>
+    </section>
 
-      <div class="feature-block">
-        <h3>🎬 Final Demo Showcase</h3>
-        <p>This demo video walks through every major feature—from launching the map and clicking countries, to exploring games, news, and kid-friendly views.</p>
-        <video controls class="feature-video">
-          <source src="images/FinalVideo.webm" type="video/webm" />
+    <section class="dev-progress">
+      <h2>📈 Development Timeline</h2>
+      <ul class="timeline-list">
+        <li><strong>Week 1:</strong> Project proposal, wireframes, tech stack finalized.</li>
+        <li><strong>Week 2:</strong> Built Leaflet map with basic GeoJSON borders.</li>
+        <li><strong>Week 3:</strong> Wikipedia integration with modal UI.</li>
+        <li><strong>Week 4–5:</strong> GNews API, game logic, localStorage tracker.</li>
+        <li><strong>Week 6–7:</strong> UI polish, dark mode, accessibility passes.</li>
+        <li><strong>Week 8–10:</strong> Junior Explorer, learn feature, final testing and demo videos.</li>
+      </ul>
+      <div class="dev-media">
+        <video class="dev-video" controls>
+          <source src="images/DevVideo.webm" type="video/webm" />
           Your browser does not support the video tag.
         </video>
+        <video class="dev-video" controls>
+          <source src="images/MVPVideo.webm" type="video/webm" />
+          Your browser does not support the video tag.
+        </video>
+        <img src="images/FirstScreenshot.png" class="dev-img" alt="Early Dev Screenshot">
       </div>
     </section>
 
-    <section class="challenges">
-      <h2>Challenges & Solutions</h2>
-      <ul>
-        <li><strong>News Integration:</strong> Tried various APIs and even RSS, but settled on GNews for stability and coverage.</li>
-        <li><strong>Mobile Performance:</strong> Leaflet map tuning and UI throttling ensured smooth rendering on all devices.</li>
-        <li><strong>Kid-Friendly Architecture:</strong> Junior Explorer mode involved conditional rendering, interface rework, and local logic toggles.</li>
-      </ul>
-    </section>
-
-    <section class="timeline">
-      <h2>🗓️ Timeline</h2>
-      <ul class="timeline-list">
-        <li><strong>Week 1:</strong> Project pitch, wireframes, technology stack.</li>
-        <li><strong>Week 2:</strong> Map setup with Leaflet.js</li>
-        <li><strong>Week 3:</strong> Wikipedia summary integration.</li>
-        <li><strong>Week 4–5:</strong> Style & mobile support testing.</li>
-        <li><strong>Week 6–7:</strong> Game logic, country tracking, storage.</li>
-        <li><strong>Week 8:</strong> Search bar & label tuning.</li>
-        <li><strong>Week 9–10:</strong> News prototype & map filters.</li>
-        <li><strong>Week 11:</strong> Accessibility audit.</li>
-        <li><strong>Week 13–16:</strong> Learn feature, polish, presentation prep.</li>
-        <li><strong>Week 17–18:</strong> Final pitch & launch.</li>
-      </ul>
+    <section class="demo">
+      <h2>🎥 Final Project Demo</h2>
+      <p>Watch the complete walkthrough of TerraConnect in action:</p>
+      <video class="feature-video" controls>
+        <source src="images/FinalVideo.webm" type="video/webm">
+        Your browser does not support the video tag.
+      </video>
     </section>
 
     <section class="github">
-      <h2>GitHub Repository</h2>
+      <h2>📦 GitHub Repository</h2>
       <p>
-        Full source code and project documentation:
-        <a href="https://github.com/kalspas0528/TerraConnect" target="_blank">TerraConnect on GitHub</a>
+        View source code and full documentation here:
+        <a href="https://github.com/kalspas0528/TerraConnect" target="_blank">github.com/kalspas0528/TerraConnect</a>
       </p>
-    </section>
-
-    <section class="next-steps">
-      <h2>Next Steps</h2>
-      <ul>
-        <li>Enhance Junior Mode with interactive quizzes.</li>
-        <li>Introduce user logins for cloud saves.</li>
-        <li>Globalize app with translation support.</li>
-        <li>Ship a dedicated mobile version.</li>
-      </ul>
     </section>
   </div>
 
   <footer>
-    <p>&copy; 2025 TerraConnect. All rights reserved.</p>
+    <p>&copy; 2025 TerraConnect by KalSpas0528. All rights reserved.</p>
   </footer>
 </body>
 </html>
